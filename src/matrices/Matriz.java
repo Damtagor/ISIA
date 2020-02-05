@@ -46,7 +46,11 @@ public class Matriz {
             } 
         } 
         return matrizResultante; 
-    } 
+    }
+
+    public static void sumarDosMatrices(Matriz a, Matriz b) throws DimensionesIncompatibles {
+        //Se realiza una inversión
+    }
 
     @Override
     public String toString(){
