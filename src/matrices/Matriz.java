@@ -48,8 +48,20 @@ public class Matriz {
         return matrizResultante; 
     }
 
-    public static void sumarDosMatrices(Matriz a, Matriz b) throws DimensionesIncompatibles {
-        //Se realiza una inversiÃ³n
+    public static Matriz multiplicarDosMatrices(Matriz a,Matriz b) throws DimensionesIncompatibles {
+        if(! a.getDimension().width.equals(b.getDimension().height)) throw new DimensionesIncompatibles("La multiplicación de matrices requiere matrices con dimensiones compatibles");
+        int i, j, filas, columnas, suma;
+        filas = a.getDimension().height;
+        columnas = b.getDimension().width;
+        Matriz matrizResultante = new Matriz(filas, columnas, false);
+        for (j = 0; j < filas; j++) {
+            suma = 0;
+            for (i = 0; i < columnas; i++) {
+                suma += a.datos[i][j] + b.datos[j][i];
+            }
+            matrizResultante.datos[i][j] = suma;
+        }
+        return matrizResultante;
     }
 
     @Override
