@@ -48,6 +48,10 @@ public class Matriz {
         return matrizResultante; 
     } 
 
+    public static void fusionDosMatrices(Matriz a, Matriz b) throws DimensionesIncompatibles { 
+    	//codigo de fusion de matrices
+    }
+    
     @Override
     public String toString(){
         String ret = "";
